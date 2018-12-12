@@ -1,4 +1,13 @@
+
+
+
 {% extends "base_generic.html" %}
+
+
+
+{% block title %}
+<title>Home Page</title>
+{% endblock %}
 
 {% block content %}
   <h1>Local Library Home</h1>
@@ -10,5 +19,12 @@
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Books with Brave in the title:</strong> {{books_withBrave}}</li>
+    <li><strong>Number of genre's in 'fantasy':</strong> {{fantasy_count}} </li>
   </ul>
+
 {% endblock %}
+
+
+
+

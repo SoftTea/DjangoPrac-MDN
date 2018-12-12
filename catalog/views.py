@@ -16,13 +16,28 @@ def index(request):
     
     # The 'all()' is implied by default.    
     num_authors = Author.objects.count()
+
+    books_withBrave = Book.objects.filter(title__icontains='Brave').count()
+
+    fantasy_count = Genre.objects.filter(name__icontains ='fantasy').count()
     
     context = {
         'num_books': num_books,
         'num_instances': num_instances,
         'num_instances_available': num_instances_available,
         'num_authors': num_authors,
+        'books_withBrave': books_withBrave,
+        'fantasy_count': fantasy_count,
     }
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+from django.views import generic
+
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 2
+
+class BookDetailView(generic.DetailView):
+    model = Book
