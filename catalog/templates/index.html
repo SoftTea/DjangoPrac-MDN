@@ -23,6 +23,8 @@
     <li><strong>Number of genre's in 'fantasy':</strong> {{fantasy_count}} </li>
   </ul>
 
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
 {% endblock %}
 
 
