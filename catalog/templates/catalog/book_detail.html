@@ -20,6 +20,7 @@
       {% endif %}
       <p><strong>Imprint:</strong> {{copy.imprint}}</p>
       <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+      <a href="{% url 'bookInst_update' copy.id %}"> Edit</a>
     {% endfor %}
   </div>
 {% endblock %}
